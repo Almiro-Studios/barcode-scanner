@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  v8-web-scanner:
+    restart: always
+    image: "mikaelx/v8-web-scanner:latest"
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    deploy:
+      replicas: 1
+    environment:
+      DOCKER: "true"
+      API_URL: 'https://gfx-dev.almiro.se/trackside'
+      PORT: 3000
+    networks:
+      - isolated
+      - nginx-network
+networks:
+  isolated:
+  nginx-network:
+    external: true

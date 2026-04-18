@@ -1,0 +1,9 @@
+node_modules
+webpack/node_modules
+#public/images
+#public/templates/*
+#!public/templates/creventic
+public/templates/*/videos
+public/templates/*/tracks
+public/templates/*/teams
+public/templates/*/fullscreen-graphics
